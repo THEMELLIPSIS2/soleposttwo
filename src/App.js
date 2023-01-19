@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import NavBar from './components/Nav'
-import {useSelector} from 'react-redux'
+import { Footer } from './components/Footer'
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>I Love Shoes</p>
       </header>
+      <Footer />
     </div>
   );
 }
