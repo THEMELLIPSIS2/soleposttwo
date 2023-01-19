@@ -2,6 +2,9 @@ import logo from './logo.svg';
 import supabase from './supabase';
 import { useState } from 'react';
 import './App.css';
+import React from 'react';
+import NavBar from './components/Nav';
+import { useSelector } from 'react-redux';
 
 function App() {
   const [user, setUser] = useState(null);
