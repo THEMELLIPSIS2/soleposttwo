@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import supabase from './supabase';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import React from 'react';
-import NavBar from './components/Nav';
 import { useSelector } from 'react-redux';
+import NavBar from './components/NavBar';
+import { Footer } from './components/Footer';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -35,6 +36,7 @@ function App() {
       ) : (
         <button onClick={signOut}>SIGN OUT {user?.email}</button>
       )}
+      <Footer />
     </div>
   );
 }
