@@ -31,7 +31,8 @@ function App() {
 
   return (
     <div className="App">
-      <CssBaseline />
+
+
       <img src={logo} className="App-logo" alt="logo" />
       <p>I Love Shoes</p>
       <Routes />
