@@ -5,7 +5,9 @@ import './App.css';
 import React from 'react';
 import { useSelector } from 'react-redux';
 import NavBar from './components/NavBar';
+import { CssBaseline, ThemeProvider } from '@mui/material';
 import { Footer } from './components/Footer';
+import Routes from './components/Routes';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -29,13 +31,10 @@ function App() {
 
   return (
     <div className="App">
+      <CssBaseline />
       <img src={logo} className="App-logo" alt="logo" />
       <p>I Love Shoes</p>
-      {!user ? (
-        <button onClick={signInWithGithub}>SIGN IN WITH GITHUB</button>
-      ) : (
-        <button onClick={signOut}>SIGN OUT {user?.email}</button>
-      )}
+      <Routes />
       <Footer />
     </div>
   );
