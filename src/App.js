@@ -1,10 +1,11 @@
 import logo from './logo.svg';
 import supabase from './supabase';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import React from 'react';
-import NavBar from './components/Nav'
-import { Footer } from './components/Footer'
+import { useSelector } from 'react-redux';
+import NavBar from './components/NavBar';
+import { Footer } from './components/Footer';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -28,11 +29,8 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>I Love Shoes</p>
-      </header>
+      <img src={logo} className="App-logo" alt="logo" />
+      <p>I Love Shoes</p>
       {!user ? (
         <button onClick={signInWithGithub}>SIGN IN WITH GITHUB</button>
       ) : (
