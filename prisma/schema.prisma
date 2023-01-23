@@ -9,11 +9,11 @@ datasource db {
 }
 
 model article_tag {
-  id         BigInt    @id(map: "Article_Tag_pkey") @default(autoincrement())
-  article_id String?   @db.Uuid
-  tag_id     BigInt?
-  articles   articles? @relation(fields: [article_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
-  tags       tags?     @relation(fields: [tag_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  id       BigInt    @id(map: "Article_Tag_pkey") @default(autoincrement())
+  article  String?   @db.Uuid
+  tag      BigInt?
+  articles articles? @relation(fields: [article], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  tags     tags?     @relation(fields: [tag], references: [id], onDelete: NoAction, onUpdate: NoAction)
 }
 
 model articles {

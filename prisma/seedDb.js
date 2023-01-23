@@ -49,7 +49,16 @@ function createData(num) {
         create: {
           title: faker.lorem.words(5),
           content: faker.lorem.paragraphs(5, '\n'),
-          published: true
+          published: true,
+          article_tag: {
+            create: {
+              tags: {
+                connect: {
+                  id: 9
+                }
+              }
+            }
+          }
         }
       }
     };
@@ -63,14 +72,22 @@ async function seedDb() {
     await prisma.user.create({
       data: user,
       include: {
-        articles: true
+        articles: {
+          include: {
+            article_tag: {
+              include: {
+                tags: true
+              }
+            }
+          }
+        }
       }
     });
   }
 }
 
 async function main() {
-  createData(0);
+  createData(3);
   await seedDb();
 
   // const genTags = tags.map((tag) => {
