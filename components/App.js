@@ -1,13 +1,12 @@
-import logo from './logo.svg';
-import supabase from './supabase';
+import logo from '../logo.svg';
+import supabase from '../supabase';
 import { useState, useEffect } from 'react';
-import './App.css';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import NavBar from './components/NavBar';
+import NavBar from './NavBar';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import { Footer } from './components/Footer';
-import Routes from './components/Routes';
+import { Footer } from './Footer';
+import Image from 'next/image';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -31,11 +30,8 @@ function App() {
 
   return (
     <div className="App">
-
-
-      <img src={logo} className="App-logo" alt="logo" />
+      <Image src={logo} className="App-logo" alt="logo" />
       <p>I Love Shoes</p>
-      <Routes />
       <Footer />
     </div>
   );
