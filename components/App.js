@@ -30,6 +30,7 @@ function App() {
 
   return (
     <div className="App">
+      <NavBar />
       <Image src={logo} className="App-logo" alt="logo" />
       <p>I Love Shoes</p>
       <Footer />
