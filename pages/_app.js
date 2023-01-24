@@ -1,5 +1,5 @@
 import Head from 'next/head';
-
+import '../styles/App.css'
 export default function MyApp({ Component, pageProps }) {
   return (
     <div>
